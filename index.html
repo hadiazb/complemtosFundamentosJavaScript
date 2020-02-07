@@ -8,27 +8,22 @@
 </head>
 <body>
 
-    <script type="text/javascript">
-      function factorial(n){
-        if (!this.cache) {
-          this.cache = {}
-        }
-        debugger
-        if (this.cache[n]) {
-          return this.cache[n]
-        }
-
-        if (n === 1) {
-          return 1
-        }
-        if (n === 0) {
-          return 1
-        }
-        this.cache[n] = n * factorial(n - 1)
-        debugger
-        return this.cache[n]
+  <script type="text/javascript">
+    function crearSaludo(finalDeFrase){
+      return function (nombre){
+        console.log(`Hola ${nombre} ${finalDeFrase}`);
       }
-    </script>
+    }
+
+    const saludoArgentino = crearSaludo('che')
+    const saludoMexicano = crearSaludo('guey')
+    const saludoColombiano = crearSaludo('parce')
+
+    saludoArgentino('Hugo')
+    saludoMexicano('Hugo')
+    saludoColombiano('Hugo')
+
+  </script>
 
 </body>
 </html>
